@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TeleBotHost — Telegram Bot Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --fg:#000000;
+      --muted:#666666;
+      --accent-bg:var(--fg);
+      --accent-fg:var(--bg);
+      --gap:24px;
+      --max-column:1200px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family:'Space Mono', monospace;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.2;
+      letter-spacing:0.01em;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:24px;
+      gap:var(--gap);
+      border-bottom:1px solid var(--fg);
+    }
+
+    .brand{
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+
+
+    .name{font-size:18px;font-weight:700}
+    .role{font-size:13px;color:var(--muted);}
+
+    nav{display:flex;gap:12px;align-items:center}
+
+    .btn{
+      appearance:none;border:none;padding:10px 14px;
+      background:transparent;color:var(--fg);cursor:pointer;
+      font-family:inherit;font-weight:700;text-transform:uppercase;
+      letter-spacing:0.08em;border:2px solid var(--fg);
+      outline-offset:4px;border-radius:0;
+    }
+
+    .btn:focus{outline:3px dashed var(--fg);outline-offset:6px}
+    .btn--filled{background:var(--accent-bg);color:var(--accent-fg)}
+
+    main{display:block}
+
+    .hero{
+      padding:64px 24px;display:grid;align-items:center;gap:24px;
+    }
+    .hero h1{font-size:clamp(28px,7vw,56px);margin:0;font-weight:700}
+    .hero p{margin:0;color:var(--muted);max-width:70ch}
+
+    .projects{
+      padding:var(--gap) 24px 64px 24px;display:grid;gap:16px;
+      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    }
+
+    .card{
+      padding:18px;border:2px solid var(--fg);display:flex;flex-direction:column;gap:12px;
+      min-height:160px;justify-content:space-between;background:transparent;border-radius:0;
+    }
+
+    .card h3{margin:0;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:13px}
+
+    .contact{
+      padding:48px 24px;border-top:1px solid var(--fg);display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+    }
+
+    .contact .left{flex:1;min-width:220px}
+    .contact .right{display:flex;gap:12px;align-items:center}
+
+    footer{padding:18px 24px;border-top:1px solid var(--fg);color:var(--muted);font-size:13px}
+
+    @media (max-width:520px){
+      header{flex-direction:column;align-items:flex-start}
+      .projects{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+
+      <div>
+        <div class="name">TeleBotHost</div>
+        <div class="role">Telegram Bot Platform</div>
+      </div>
+    </div>
+    <nav>
+      <a href="https://telebothost.com" class="btn">Home</a>
+      <a href="https://telebothost.com/docs" class="btn">Docs</a>
+      <a href="https://telebothost.com/tutorials" class="btn btn--filled">Tutorials</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Build Telegram Bots Fast</h1>
+      <p>TeleBotHost provides everything you need to create, deploy, and manage Telegram bots. No servers, no configuration — just write your bot logic in TBL and go live.</p>
+      <div style="display:flex;gap:12px">
+        <a href="https://telebothost.com" class="btn btn--filled">Get Started</a>
+        <a href="https://telebothost.com/docs" class="btn">Documentation</a>
+      </div>
+    </section>
+
+    <section class="projects" aria-label="Features">
+      <article class="card">
+        <div>
+          <h3>TBL Language</h3>
+          <p>JavaScript-like syntax designed for Telegram bots. Built-in API methods, user properties, and async support.</p>
+        </div>
+        <div style="display:flex;gap:8px">
+          <a href="https://telebothost.com/docs/#intro" class="btn">Learn</a>
+          <a href="https://telebothost.com/tutorials" class="btn btn--filled">Try</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>Webhook Support</h3>
+          <p>Call bot commands via HTTP. Build websites, dashboards, or external tools that interact with your bot.</p>
+        </div>
+        <div style="display:flex;gap:8px">
+          <a href="https://telebothost.com/docs/#class-webhook" class="btn">Guide</a>
+          <a href="https://telebothost.com/docs/#class-webhook" class="btn btn--filled">Examples</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>Built-in Libraries</h3>
+          <p>JWT, bcrypt, crypto, CSV/YAML parsing, UUID, date handling, and more available directly in your code.</p>
+        </div>
+        <div style="display:flex;gap:8px">
+          <a href="https://telebothost.com/docs/#modules" class="btn">List</a>
+          <a href="https://telebothost.com/docs/#modules" class="btn btn--filled">Usage</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>Free Hosting</h3>
+          <p>Start for free with no credit card required. Scale as you grow with affordable pricing plans.</p>
+        </div>
+        <div style="display:flex;gap:8px">
+          <a href="https://telebothost.com" class="btn">Pricing</a>
+          <a href="https://telebothost.com" class="btn btn--filled">Sign Up</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="contact">
+      <div class="left">
+        <h3>Need Help or Have Questions?</h3>
+        <p style="color:var(--muted);margin-top:8px">Join our community or contact support for assistance.</p>
+      </div>
+      <div class="right">
+        <a href="https://t.me/update_chat" class="btn">Support</a>
+        <a href="https://telebothost.com" class="btn">Website</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> TeleBotHost — Telegram Bot Hosting Platform.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') document.body.classList.add('show-focus');
+    });
+  </script>
+</body>
+</html>
